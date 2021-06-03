@@ -54,8 +54,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
    Route::post('produkimage', 'ProdukController@uploadimage');
    // hapus image produk
    Route::delete('produkimage/{id}', 'ProdukController@deleteimage');
-   // slideshow
-   Route::resource('slideshow', 'SlideshowController');
+  // slideshow
+  Route::resource('slideshow', 'SlideshowController');
+  // produk promo
+  Route::resource('promo', 'ProdukPromoController');
+  // load async produk
+  Route::get('loadprodukasync/{id}', 'ProdukController@loadasync');
 });
 
 Auth::routes();

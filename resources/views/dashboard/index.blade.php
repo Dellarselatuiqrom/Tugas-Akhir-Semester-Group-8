@@ -5,7 +5,7 @@
     <div class="col-6 col-lg-3">
       <div class="small-box bg-primary">
         <div class="inner">
-          <h3>150</h3>
+          <h3>2</h3>
 
           <p>Order Baru</p>
         </div>
@@ -18,7 +18,7 @@
     <div class="col-6 col-lg-3">
       <div class="small-box bg-info">
         <div class="inner">
-          <h3>150</h3>
+          <h3>15</h3>
 
           <p>Produk</p>
         </div>
@@ -31,7 +31,7 @@
     <div class="col-6 col-lg-3">
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>150</h3>
+          <h3>5</h3>
 
           <p>Member</p>
         </div>
@@ -45,7 +45,7 @@
     <div class="col-6 col-lg-3">
       <div class="small-box bg-success">
         <div class="inner">
-          <h3>150</h3>
+          <h3>3</h3>
 
           <p>Transaksi</p>
         </div>
@@ -75,7 +75,6 @@
                 <th>No</th>
                 <th>Kode</th>
                 <th>Nama</th>
-                <th>Kategori</th>
                 <th>Qty</th>
                 <th>Harga</th>
               </tr>
@@ -83,27 +82,24 @@
             <tbody>
               <tr>
                 <td>1</td>
-                <td>PRO-1</td>
-                <td>Baju Atasan</td>
-                <td>Baju Anak</td>
-                <td>12 kodi</td>
-                <td>5.000</td>
+                <td>01</td>
+                <td>Iphone 12 Pro Max</td>
+                <td>100 unit</td>
+                <td>Rp. 30.000.000</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>PRO-2</td>
-                <td>Gamis</td>
-                <td>Baju Wanita</td>
-                <td>20 kodi</td>
-                <td>25.000</td>
+                <td>02</td>
+                <td>Iphone 12 Pro</td>
+                <td>200 unit</td>
+                <td>Rp. 25.000.000</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>PRO-3</td>
-                <td>Daster</td>
-                <td>Baju Wanita</td>
-                <td>20 kodi</td>
-                <td>125.000</td>
+                <td>03</td>
+                <td>Iphone 12</td>
+                <td>200 unit</td>
+                <td>Rp. 18.000.000</td>
               </tr>
             </tbody>
           </table>
