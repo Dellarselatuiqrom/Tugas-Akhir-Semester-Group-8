@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProdukPromo;
+
 use Illuminate\Http\Request;
+use App\Models\ProdukPromo;
+use App\Models\Produk;
 
 class ProdukPromoController extends Controller
 {

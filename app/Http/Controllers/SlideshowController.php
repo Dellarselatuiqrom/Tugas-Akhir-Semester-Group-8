@@ -48,7 +48,7 @@ class SlideshowController extends Controller
         $inputan['user_id'] = $itemuser->id;
         // ambil url foto yang diupload
         $fileupload = $request->file('image');
-        $folder = 'assets/images';
+        $folder = '/images';
         $itemgambar = (new ImageController)->upload($fileupload, $itemuser, $folder);
         // masukkan url yang telah diupload ke $inputan
         $inputan['foto'] = $itemgambar->url;
