@@ -39,4 +39,4 @@ class Cart extends Model
         self::save();
     }
 }
-}
+

@@ -28,11 +28,10 @@ class CartDetail extends Model
         return $this->belongsTo('App\Models\Produk', 'produk_id');
     }
 
-    // function untuk update qty, sama subtotal
     public function updatedetail($itemdetail, $qty, $harga, $diskon) {
         $this->attributes['qty'] = $itemdetail->qty + $qty;
         $this->attributes['subtotal'] = $itemdetail->subtotal + ($qty * ($harga - $diskon));
         self::save();
     }
 }
-}
+

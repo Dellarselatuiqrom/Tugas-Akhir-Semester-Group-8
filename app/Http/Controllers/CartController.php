@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\AlamatPengiriman;
 use App\Models\Order;
-use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
