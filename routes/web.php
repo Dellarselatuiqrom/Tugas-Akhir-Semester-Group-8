@@ -29,4 +29,6 @@ Route::group(['prefix' => 'admin'], function() {
   Route::resource('produk', 'ProdukController');
   // route customer
   Route::resource('customer', 'CustomerController');
+  // route transaksi
+  Route::resource('transaksi', 'TransaksiController');
 });
