@@ -17,3 +17,8 @@ use App\Http\Controllers\HomepageController;
 Route::get('/', 'HomepageController@index');
 Route::get('/about', 'HomepageController@about');
 Route::get('/kontak', 'HomepageController@kontak');
+Route::get('/kategori', 'HomepageController@kategori');
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', 'DashboardController@index');
+  });
