@@ -12,9 +12,9 @@
       <div class="card mb-4 shadow-sm">
         <a href="{{ URL::to('kategori/'.$kategori->slug_kategori) }}">
           @if($kategori->foto != null)
-          <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
+          <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" height="150" class="center">
           @else
-          <img src="{{asset('images/bag.jpg') }}" alt="{{ $kategori->nama_kategori }}" class="card-img-top">
+          <img src="{{asset('Storage/') }}" alt="{{ $kategori->foto }}" class="card-img-top">
           @endif
         </a>
         <div class="card-body">
@@ -29,7 +29,7 @@
   <!-- produk Terbaru-->
   <div class="row mt-4">
     <div class="col col-md-12 col-sm-12 mb-4">
-      <h2 class="text-center">Terbaru</h2>
+      <h2 class="text-center">Produk Terbaru</h2>
     </div>
     @foreach($itemproduk as $produk)
     <!-- produk pertama -->

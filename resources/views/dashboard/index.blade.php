@@ -63,7 +63,7 @@
         <div class="card-header">
           <h4 class="card-title">Produk Baru</h4>
           <div class="card-tools">
-            <a href="#" class="btn btn-sm btn-primary">
+            <a href="/admin/produk" class="btn btn-sm btn-primary">
               More
             </a>
           </div>

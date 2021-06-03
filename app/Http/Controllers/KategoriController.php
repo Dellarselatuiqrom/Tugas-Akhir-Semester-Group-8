@@ -146,7 +146,7 @@ class KategoriController extends Controller
                                 ->first();
         if ($itemkategori) {
             $fileupload = $request->file('image');
-            $folder = 'assets/images';
+            $folder = 'public/images';
             $itemgambar = (new ImageController)->upload($fileupload, $itemuser, $folder);
             $inputan['foto'] = $itemgambar->url;//ambil url file yang barusan diupload
             $itemkategori->update($inputan);
@@ -166,7 +166,7 @@ class KategoriController extends Controller
             $itemgambar = \App\Models\Image::where('url', $itemkategori->foto)->first();
             // hapus imagenya
             if ($itemgambar) {
-                \Storage::delete($itemgambar->url);
+                \images::delete($itemgambar->url);
                 $itemgambar->delete();
             }
             // baru update foto kategori

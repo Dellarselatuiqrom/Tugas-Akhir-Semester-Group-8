@@ -63,29 +63,13 @@
           </a>
         </li>
     <li class="nav-item has-treeview">
-      <a href="#" class="nav-link">
+      <a href="{{ route('customer.index') }}" class="nav-link">
         <i class="nav-icon fas fa-folder"></i>
         <p>
           Data
           <i class="right fas fa-angle-left"></i>
         </p>
       </a>
-      <li class="nav-item has-treeview">
-      <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-cogs"></i>
-        <p>
-          Setting
-          <i class="right fas fa-angle-left"></i>
-        </p>
-      </a>
-      <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a href="{{ route('slideshow.index') }}" class="nav-link">
-            <i class="far fa-images nav-icon"></i>
-            <p>Slideshow</p>
-          </a>
-        </li>
-      </ul>
      </li>
       <ul class="nav nav-treeview">
         <li class="nav-item">
