@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomepageController;
 
 /*
@@ -40,3 +41,7 @@ Route::group(['prefix' => 'admin'], function() {
   // proses laporan
   Route::get('proseslaporan', 'LaporanController@proses');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
