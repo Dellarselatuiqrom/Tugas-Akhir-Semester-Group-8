@@ -12,9 +12,14 @@ class WishlistController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $itemuser = $request->user();
+        $itemwishlist = Wishlist::where('user_id', $itemuser->id)
+                                ->paginate(10);
+        $data = array('title' => 'Wishlist',
+                    'itemwishlist' => $itemwishlist);
+        return view('wishlist.index', $data)->with('no', ($request->input('page', 1) - 1) * 10);
     }
 
     /**
@@ -35,16 +40,31 @@ class WishlistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'produk_id' => 'required',
+        ]);
+        $itemuser = $request->user();
+        $validasiwishlist = Wishlist::where('produk_id', $request->produk_id)
+                                    ->where('user_id', $itemuser->id)
+                                    ->first();
+        if ($validasiwishlist) {
+            $validasiwishlist->delete();//kalo udah ada, berarti wishlist dihapus
+            return back()->with('success', 'Wishlist berhasil dihapus');
+        } else {
+            $inputan = $request->all();
+            $inputan['user_id'] = $itemuser->id;
+            $itemwishlist = Wishlist::create($inputan);
+            return back()->with('success', 'Produk berhasil ditambahkan ke wishlist');
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Wishlist  $wishlist
+     * @param  \App\Wishlist  $wishlist
      * @return \Illuminate\Http\Response
      */
-    public function show(Wishlist $wishlist)
+    public function show($id)
     {
         //
     }
@@ -52,10 +72,10 @@ class WishlistController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Wishlist  $wishlist
+     * @param  \App\Wishlist  $wishlist
      * @return \Illuminate\Http\Response
      */
-    public function edit(Wishlist $wishlist)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +84,10 @@ class WishlistController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Wishlist  $wishlist
+     * @param  \App\Wishlist  $wishlist
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Wishlist $wishlist)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,11 +95,16 @@ class WishlistController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Wishlist  $wishlist
+     * @param  \App\Wishlist  $wishlist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Wishlist $wishlist)
+    public function destroy($id)
     {
-        //
+        $itemwishlist = Wishlist::findOrFail($id);
+        if ($itemwishlist->delete()) {
+            return back()->with('success', 'Wishlist berhasil dihapus');
+        } else {
+            return back()->with('error', 'Wishlist gagal dihapus');
+        }
     }
 }

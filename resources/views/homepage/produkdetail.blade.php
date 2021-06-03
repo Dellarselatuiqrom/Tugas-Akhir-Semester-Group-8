@@ -33,6 +33,21 @@
         <div class="col">
           <div class="card">
             <div class="card-body">
+              @if(count($errors) > 0)
+              @foreach($errors->all() as $error)
+                  <div class="alert alert-warning">{{ $error }}</div>
+              @endforeach
+              @endif
+              @if ($message = Session::get('error'))
+                  <div class="alert alert-warning">
+                      <p>{{ $message }}</p>
+                  </div>
+              @endif
+              @if ($message = Session::get('success'))
+                  <div class="alert alert-success">
+                      <p>{{ $message }}</p>
+                  </div>
+              @endif
               <span class="small">{{ $itemproduk->kategori->nama_kategori }}</span>
               <h5>{{ $itemproduk->nama_produk }}</h5>
               <!-- cek apakah ada promo -->
@@ -47,9 +62,17 @@
                 Rp. {{ number_format($itemproduk->harga, 2) }}
               </p>
               @endif
-              <button class="btn btn-sm btn-outline-secondary">
-              <i class="far fa-heart"></i> Tambah ke wishlist
-              </button>
+              <form action="{{ route('wishlist.store') }}" method="post">
+                @csrf
+                <input type="hidden" name="produk_id" value={{ $itemproduk->id }}>
+                <button type="submit" class="btn btn-sm btn-outline-secondary">
+                @if(isset($itemwishlist) && $itemwishlist)
+                <i class="fas fa-heart"></i> Tambah ke wishlist
+                @else
+                <i class="far fa-heart"></i> Tambah ke wishlist
+                @endif
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -58,9 +81,13 @@
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <button class="btn btn-block btn-primary">
+            <form action="{{ route('cartdetail.store') }}" method="POST">
+              @csrf
+              <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
+              <button class="btn btn-block btn-primary" type="submit">
               <i class="fa fa-shopping-cart"></i> Tambahkan Ke Keranjang
               </button>
+            </form>
               <button class="btn btn-block btn-danger mt-4">
               <i class="fa fa-shopping-basket"></i> Beli Sekarang
               </button>

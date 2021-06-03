@@ -4,36 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Kategori;
-use App\Models\User;
-use App\Models\ProdukImage;
+use App\Models\Produk;
 
-class Produk extends Model
+class ProdukImage extends Model
 {
-    protected $table = 'produk';
     protected $fillable = [
-        'kategori_id',
-        'user_id',
-        'kode_produk',
-        'nama_produk',
-        'slug_produk',
-        'deskripsi_produk',
+        'produk_id',
         'foto',
-        'qty',
-        'satuan',
-        'harga',
-        'status',
     ];
 
-    public function kategori() {
-        return $this->belongsTo('App\Models\Kategori', 'kategori_id');
-    }
-
-    public function user() {
-        return $this->belongsTo('App\Models\User', 'user_id');
-    }
-
-    public function images() {
-        return $this->hasMany('App\Models\ProdukImage', 'produk_id');
+    public function produk() {
+        return $this->belongsTo('App\Models\Produk','produk_id');
     }
 }

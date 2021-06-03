@@ -161,7 +161,7 @@ class ProdukController extends Controller
             $inputan = $request->all();
             $inputan['foto'] = $itemgambar->url;//ambil url file yang barusan diupload
             // simpan ke produk image
-            \App\ProdukImage::create($inputan);
+            \App\Models\ProdukImage::create($inputan);
             // update banner produk
             $itemproduk->update(['foto' => $itemgambar->url]);
             // end update banner produk

@@ -60,8 +60,25 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   Route::resource('promo', 'ProdukPromoController');
   // load async produk
   Route::get('loadprodukasync/{id}', 'ProdukController@loadasync');
-});
+    // wishlist
+    Route::resource('wishlist', 'WishlistController');
+// shopping cart
+Route::group(['middleware' => 'auth'], function() {
+    // cart
+    Route::resource('cart', 'CartController');
+    Route::patch('kosongkan/{id}', 'CartController@kosongkan');
+    // cart detail
+    Route::resource('cartdetail', 'CartDetailController');
+    // alamat pengiriman
+    Route::resource('alamatpengiriman', 'AlamatPengirimanController');
+    // checkout
+    Route::get('checkout', 'CartController@checkout');
+  });
+  });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function() {
+    return redirect('/admin');
+  });
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
