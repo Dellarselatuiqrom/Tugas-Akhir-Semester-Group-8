@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\Kategori;
-use App\Models\Slideshow;
 use App\Models\ProdukPromo;
 use App\Models\Wishlist;
 use Auth;
@@ -16,12 +15,10 @@ class HomepageController extends Controller
         $itemproduk = Produk::orderBy('created_at', 'desc')->limit(6)->get();
         $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(6)->get();
         $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->limit(6)->get();
-        $itemslide = Slideshow::get();
         $data = array('title' => 'Homepage',
             'itemproduk' => $itemproduk,
             'itempromo' => $itempromo,
             'itemkategori' => $itemkategori,
-            'itemslide' => $itemslide,
         );
         return view('homepage.index', $data);
     }

@@ -6,25 +6,15 @@
     <div class="col">
       <div id="carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          @foreach($itemslide as $index => $slide )
-          @if($index == 0)
           <div class="carousel-item active">
-              <img src="{{ \Storage::url($slide->foto) }}" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>{{ $slide->caption_title }}</h5>
-                <p>{{ $slide->caption_content }}</p>
-              </div>
+              <img src="{{ asset('images/slide1.jpg') }}" class="d-block w-100" alt="...">
           </div>
-          @else
           <div class="carousel-item">
-              <img src="{{ \Storage::url($slide->foto) }}" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>{{ $slide->caption_title }}</h5>
-                <p>{{ $slide->caption_content }}</p>
-              </div>
+            <img src="{{ asset('images/slide2.jpg') }}" class="d-block w-100" alt="...">
           </div>
-          @endif
-          @endforeach
+          <div class="carousel-item">
+            <img src="{{ asset('images/slide3.jpg') }}" class="d-block w-100" alt="...">
+          </div>
         </div>
         <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -63,47 +53,7 @@
     </div>
     @endforeach
   <!-- end kategori produk -->
-  <!-- produk Promo-->
-  <div class="row mt-4">
-    <div class="col col-md-12 col-sm-12 mb-4">
-      <h2 class="text-center">Promo</h2>
-    </div>
-    @foreach($itempromo as $promo)
-    <!-- produk pertama -->
-    <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
-        <a href="{{ URL::to('produk/'.$promo->produk->slug_produk) }}">
-          @if($promo->produk->foto != null)
-          <img src="{{\Storage::url($promo->produk->foto) }}" alt="{{ $promo->produk->nama_produk }}" class="card-img-top">
-          @else
-          <img src="{{asset('images/bag.jpg') }}" alt="{{ $promo->produk->nama_produk }}" class="card-img-top">
-          @endif
-        </a>
-        <div class="card-body">
-          <a href="{{ URL::to('produk/'.$promo->produk->slug_produk) }}" class="text-decoration-none">
-            <p class="card-text">
-              {{ $promo->produk->nama_produk }}
-            </p>
-          </a>
-          <div class="row mt-4">
-            <div class="col">
-              <button class="btn btn-light">
-                <i class="far fa-heart"></i>
-              </button>
-            </div>
-            <div class="col-auto">
-              <p>
-                <del>Rp. {{ number_format($promo->harga_awal, 2) }}</del>
-                <br />
-                Rp. {{ number_format($promo->harga_akhir, 2) }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    @endforeach
-  <!-- end produk promo -->
+
   <!-- produk Terbaru-->
   <div class="row mt-4">
     <div class="col col-md-12 col-sm-12 mb-4">
@@ -143,18 +93,5 @@
     </div>
     @endforeach
   <!-- end produk terbaru -->
-  <!-- tentang toko -->
-  <hr>
-  <div class="row mt-4">
-    <div class="col">
-      <h5 class="text-center">Toko Online Menggunakan Laravel</h5>
-      <p>Sebuah toko smartphone yang menyediakan smartphone kepada pelanggan,
-      dapat dibeli secara online, dikirim sesuai alamat yang tertera,
-      memiliki jaminan kepuasan dan garansi disetiap smartphone yang telah dibeli disini.
-      Happy Shopping Slurr !!!!. </p>
-      </p>
-    </div>
-  </div>
-  <!-- end tentang toko -->
 </div>
 @endsection

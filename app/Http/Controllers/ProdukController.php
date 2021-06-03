@@ -155,7 +155,7 @@ class ProdukController extends Controller
                                 ->first();
         if ($itemproduk) {
             $fileupload = $request->file('image');
-            $folder = 'assets/images';
+            $folder = '/images';
             $itemgambar = (new ImageController)->upload($fileupload, $itemuser, $folder);
             // simpan ke table produk_images
             $inputan = $request->all();
@@ -173,11 +173,11 @@ class ProdukController extends Controller
 
     public function deleteimage(Request $request, $id) {
         // ambil data produk image by id
-        $itemprodukimage = \App\ProdukImage::findOrFail($id);
+        $itemprodukimage = \App\Models\ProdukImage::findOrFail($id);
         // ambil produk by produk_id kalau tidak ada maka error 404
         $itemproduk = Produk::findOrFail($itemprodukimage->produk_id);
         // kita cari dulu database berdasarkan url gambar
-        $itemgambar = \App\Image::where('url', $itemprodukimage->foto)->first();
+        $itemgambar = \App\Models\Image::where('url', $itemprodukimage->foto)->first();
         // hapus imagenya
         if ($itemgambar) {
             \Storage::delete($itemgambar->url);
@@ -186,7 +186,7 @@ class ProdukController extends Controller
         // baru update hapus produk image
         $itemprodukimage->delete();
         //ambil 1 buah produk image buat diupdate jadi banner produk
-        $itemsisaprodukimage = \App\ProdukImage::where('produk_id', $itemproduk->id)->first();
+        $itemsisaprodukimage = \App\Models\ProdukImage::where('produk_id', $itemproduk->id)->first();
         if ($itemsisaprodukimage) {
             $itemproduk->update(['foto' => $itemsisaprodukimage->foto]);
         } else {
