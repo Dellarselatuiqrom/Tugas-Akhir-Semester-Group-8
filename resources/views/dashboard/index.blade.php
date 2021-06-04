@@ -5,20 +5,20 @@
     <div class="col-6 col-lg-3">
       <div class="small-box bg-primary">
         <div class="inner">
-          <h3>2</h3>
+          <h3>1</h3>
 
           <p>Order Baru</p>
         </div>
         <div class="icon">
           <i class="ion ion-bag"></i>
         </div>
-        <a href="" class="small-box-footer">Info Lengkap <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="/admin/transaksi" class="small-box-footer">Info Lengkap <i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <div class="col-6 col-lg-3">
       <div class="small-box bg-info">
         <div class="inner">
-          <h3>15</h3>
+          <h3>3</h3>
 
           <p>Produk</p>
         </div>
@@ -31,7 +31,7 @@
     <div class="col-6 col-lg-3">
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>5</h3>
+          <h3>2</h3>
 
           <p>Member</p>
         </div>
@@ -45,7 +45,7 @@
     <div class="col-6 col-lg-3">
       <div class="small-box bg-success">
         <div class="inner">
-          <h3>3</h3>
+          <h3>1</h3>
 
           <p>Transaksi</p>
         </div>
@@ -75,31 +75,31 @@
                 <th>No</th>
                 <th>Kode</th>
                 <th>Nama</th>
-                <th>Qty</th>
+                <th>Quantity</th>
                 <th>Harga</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td>01</td>
-                <td>Iphone 12 Pro Max</td>
-                <td>100 unit</td>
-                <td>Rp. 30.000.000</td>
+                <td>001</td>
+                <td>Oppo A54 5G </td>
+                <td>50 unit</td>
+                <td>Rp. 4.700.000</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>02</td>
-                <td>Iphone 12 Pro</td>
-                <td>200 unit</td>
-                <td>Rp. 25.000.000</td>
+                <td>002</td>
+                <td>Oppo A74 </td>
+                <td>45 unit</td>
+                <td>Rp. 3.799.000</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>03</td>
-                <td>Iphone 12</td>
-                <td>200 unit</td>
-                <td>Rp. 18.000.000</td>
+                <td>003</td>
+                <td>Iphone 12 Pro Max </td>
+                <td>10 unit</td>
+                <td>Rp. 30.000.000</td>
               </tr>
             </tbody>
           </table>

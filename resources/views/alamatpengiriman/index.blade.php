@@ -10,7 +10,7 @@
               Alamat Pengiriman
             </div>
             <div class="col-auto">
-              <a href="{{ URL::to('checkout') }}" class="btn btn-sm btn-danger">
+              <a href="{{ URL::to('/admin/checkout') }}" class="btn btn-sm btn-danger">
                 Tutup
               </a>
             </div>
@@ -23,7 +23,7 @@
                 <tr>
                   <th>Nama Penerima</th>
                   <th>Alamat</th>
-                  <th>No tlp</th>
+                  <th>No Telepon</th>
                   <th></th>
                 </tr>
               </thead>
@@ -94,7 +94,7 @@
                   <input type="text" name="alamat" class="form-control" value={{old('alamat') }}>
                 </div>
                 <div class="form-group">
-                  <label for="no_tlp">No Tlp</label>
+                  <label for="no_tlp">No Telepon</label>
                   <input type="text" name="no_tlp" class="form-control" value={{old('no_tlp') }}>
                 </div>
                 <div class="form-group">

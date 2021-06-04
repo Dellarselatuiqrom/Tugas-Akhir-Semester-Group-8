@@ -88,7 +88,7 @@
                 <tr>
                   <th>Nama Penerima</th>
                   <th>Alamat</th>
-                  <th>No tlp</th>
+                  <th>No Telepon</th>
                 </tr>
               </thead>
               <tbody>

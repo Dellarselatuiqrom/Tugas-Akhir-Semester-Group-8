@@ -54,9 +54,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
    Route::post('produkimage', 'ProdukController@uploadimage');
    // hapus image produk
    Route::delete('produkimage/{id}', 'ProdukController@deleteimage');
-  // slideshow
-  Route::resource('slideshow', 'SlideshowController');
-  // produk promo
   Route::resource('promo', 'ProdukPromoController');
   // load async produk
   Route::get('loadprodukasync/{id}', 'ProdukController@loadasync');
@@ -73,6 +70,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('alamatpengiriman', 'AlamatPengirimanController');
     // checkout
     Route::get('checkout', 'CartController@checkout');
+    //exportpdf
+    //Route::get('/transaksi/exportpdf', 'TransaksiController@exportpdf');
   });
   });
 

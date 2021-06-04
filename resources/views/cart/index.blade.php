@@ -130,12 +130,12 @@
         <div class="card-footer">
           <div class="row">
             <div class="col">
-            <a href="{{ URL::to('/checkout') }}" class="btn btn-primary btn-block">
+            <a href="{{ URL::to('/admin/checkout') }}" class="btn btn-primary btn-block">
              Checkout
             </a>
             </div>
             <div class="col">
-              <form action="{{ url('kosongkan').'/'.$itemcart->id }}" method="post">
+              <form action="{{ url('cart.kosongkan').'/'.$itemcart->id }}" method="post">
                 @method('patch')
                 @csrf()
                 <button type="submit" class="btn btn-danger btn-block">Kosongkan</button>

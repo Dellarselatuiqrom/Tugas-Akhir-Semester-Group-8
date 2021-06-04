@@ -17,6 +17,9 @@
           <a class="nav-link" href="{{ URL::to('kategori') }}">Kategori</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{{ URL::to('admin/cart') }}">Keranjang</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{{ URL::to('kontak') }}">Kontak</a>
         </li>
         <li class="nav-item">
