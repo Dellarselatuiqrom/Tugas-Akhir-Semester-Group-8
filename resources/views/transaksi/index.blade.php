@@ -1,5 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
+<a href="/admin/transaksi/cetak_pdf" class="btn btn-sm btn-primary">Export PDF</a>
 <div class="container-fluid">
   <div class="row">
     <div class="col">
@@ -69,9 +70,6 @@
                     {{ $order->cart->status_pengiriman }}
                   </td>
                   <td>
-                  <a href="/transaksi/exportpdf" class="btn btn-sm btn-primary">
-                      Export PDF
-                    </a>
                     <a href="{{ route('transaksi.show', $order->id) }}" class="btn btn-sm btn-info mb-2">
                       Detail
                     </a>

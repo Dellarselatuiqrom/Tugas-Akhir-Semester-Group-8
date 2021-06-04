@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\AlamatPengiriman;
 use App\Models\Order;
+use PDF;
 
 class TransaksiController extends Controller
 {
@@ -176,4 +177,13 @@ class TransaksiController extends Controller
     {
         //
     }
+
+    public function cetak_pdf()
+    {
+    	$order = Order::all();
+
+    	$pdf = PDF::loadview('order_pdf',['order'=>$order]);
+    	return $pdf->download('laporan-order.pdf');
+    }
 }
+
