@@ -75,7 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/admin" class="brand-link">
-      <span class="brand-text font-weight-light">Halaman Admin</span>
+      <span class="brand-text font-weight-light">Halaman Pusat</span>
     </a>
 
     <!-- Sidebar -->
@@ -86,7 +86,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="{{ asset('img/adminLTELogo.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="/admin" class="d-block">Admin Pomato Shop</a>
+          <a href="/admin" class="d-block">Pusat Pomato Shop</a>
         </div>
       </div>
 

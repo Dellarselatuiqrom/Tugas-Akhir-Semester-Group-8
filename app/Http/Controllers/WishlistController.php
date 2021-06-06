@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use PDF;
 
 class WishlistController extends Controller
 {
@@ -107,4 +108,5 @@ class WishlistController extends Controller
             return back()->with('error', 'Wishlist gagal dihapus');
         }
     }
+
 }

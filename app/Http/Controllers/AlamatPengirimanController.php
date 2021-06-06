@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AlamatPengiriman;
+use PDF;
 
 class AlamatPengirimanController extends Controller
 {
@@ -106,5 +107,13 @@ class AlamatPengirimanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function cetakpdf()
+    {
+    	$alamatpengiriman = AlamatPengiriman::all();
+
+    	$pdf = PDF::loadview('DataAlamat_pdf',['dataalamat'=>$alamatpengiriman]);
+    	return $pdf->download('DataAlamat.pdf');
     }
 }

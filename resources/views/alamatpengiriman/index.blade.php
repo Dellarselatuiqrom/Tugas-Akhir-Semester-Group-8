@@ -1,5 +1,6 @@
 @extends('layouts.template')
 @section('content')
+<a href="{{ URL::to('/admin/cetakpdf') }}"class="btn btn-sm btn-primary">Export PDF</a>
 <div class="container">
   <div class="row">
     <div class="col col-12 mb-2">

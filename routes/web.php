@@ -71,7 +71,7 @@ Route::group(['middleware' => 'auth'], function() {
     // checkout
     Route::get('checkout', 'CartController@checkout');
     //exportpdf
-    Route::get('/transaksi/cetak_pdf', 'TransaksiController@cetak_pdf');
+    Route::get('cetakpdf', 'AlamatPengirimanController@cetakpdf');
 
   });
   });

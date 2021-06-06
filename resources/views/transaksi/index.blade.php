@@ -1,6 +1,5 @@
 @extends('layouts.dashboard')
 @section('content')
-<a href="/admin/transaksi/cetak_pdf" class="btn btn-sm btn-primary">Export PDF</a>
 <div class="container-fluid">
   <div class="row">
     <div class="col">

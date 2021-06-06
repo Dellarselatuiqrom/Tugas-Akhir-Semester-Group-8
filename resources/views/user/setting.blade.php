@@ -29,7 +29,7 @@
               <input type="text" name="name" id="name" class="form-control">
             </div>
             <div class="form-group">
-              <label for="phone">No Tlp</label>
+              <label for="phone">No Telepon</label>
               <input type="text" name="phone" id="phone" class="form-control">
             </div>
             <div class="form-group">

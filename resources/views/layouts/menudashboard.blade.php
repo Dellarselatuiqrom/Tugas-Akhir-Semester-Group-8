@@ -31,13 +31,13 @@
             <p>Kategori</p>
           </a>
         </li>
-      </ul>
-    </li>
-    <li class="nav-item">
+        <li class="nav-item">
           <a href="{{ route('promo.index') }}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Promo</p>
           </a>
+        </li>
+      </ul>
     </li>
     <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
@@ -54,49 +54,22 @@
             <p>Data Transaksi</p>
           </a>
         </li>
-      </ul>
-    </li>
-    <li class="nav-item">
+        <li class="nav-item">
           <a href="{{ route('wishlist.index') }}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Wishlist</p>
           </a>
         </li>
+      </ul>
+    </li>
     <li class="nav-item has-treeview">
-      <a href="{{ route('customer.index') }}" class="nav-link">
+      <a href="{{ route('alamatpengiriman.index') }}" class="nav-link">
         <i class="nav-icon fas fa-folder"></i>
         <p>
-          Data
-          <i class="right fas fa-angle-left"></i>
+          Data Alamat Pengiriman
         </p>
       </a>
      </li>
-      <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a href="{{ route('customer.index') }}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Customer</p>
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li class="nav-item has-treeview">
-      <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-list"></i>
-        <p>
-          Laporan
-          <i class="right fas fa-angle-left"></i>
-        </p>
-      </a>
-      <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a href="{{ URL::to('admin/laporan') }}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Penjualan</p>
-          </a>
-        </li>
-      </ul>
-    </li>
     <li class="nav-item">
       <a href="{{ URL::to('admin/profil') }}" class="nav-link">
         <i class="nav-icon fas fa-users"></i>

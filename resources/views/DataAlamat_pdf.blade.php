@@ -11,39 +11,37 @@
 		}
 	</style>
 	<center>
-		<h5>Laporan Order</h4>
+		<h5>Data Alamat Pengiriman</h4>
 	</center>
 
 	<table class='table table-bordered'>
 		<thead>
 			<tr>
-				<th>Cart ID</th>
 				<th>Nama Penerima</th>
-				<th>Nomor Telepon</th>
 				<th>Alamat</th>
 				<th>Provinsi</th>
 				<th>Kota</th>
 				<th>Kecamatan</th>
 				<th>Kelurahan</th>
 				<th>Kode Pos</th>
+				<th>Nomor Telepon</th>
+
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($order as $o)
+			@foreach($dataalamat as $p)
 			<tr>
-				<td>{{$p->cart_id}}</td>
-				<td>{{$p->nama-penerima}}</td>
-				<td>{{$p->no_tlp}}</td>
+				<td>{{$p->nama_penerima}}</td>
 				<td>{{$p->alamat}}</td>
 				<td>{{$p->provinsi}}</td>
 				<td>{{$p->kota}}</td>
 				<td>{{$p->kecamatan}}</td>
 				<td>{{$p->kelurahan}}</td>
 				<td>{{$p->kodepos}}</td>
+				<td>{{$p->no_tlp}}</td>
 			</tr>
 			@endforeach
 		</tbody>
 	</table>
-
 </body>
 </html>

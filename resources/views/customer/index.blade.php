@@ -40,11 +40,11 @@
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Amin</td>
-                  <td>amin@gmail.com</td>
-                  <td>085852527575</td>
+                  <td>Rom</td>
+                  <td>rom@gmail.com</td>
+                  <td>0812345673</td>
                   <td>
-                    Jln. Jend Sudirman no.1, Kudus
+                    Bojonegoro
                   </td>
                   <td>
                     Aktif
@@ -55,11 +55,11 @@
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>Budi</td>
-                  <td>budi@gmail.com</td>
-                  <td>085852527576</td>
+                  <td>Fal</td>
+                  <td>fal@gmail.com</td>
+                  <td>083123456778</td>
                   <td>
-                    Jln. Jend Sudirman no.2, Kudus
+                    Tangerang
                   </td>
                   <td>
                     Aktif
@@ -81,36 +81,6 @@
                   </td>
                   <td>
                     <a href="{{ route('customer.edit', 3) }}" class="btn btn-sm btn-primary">Edit</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Lala</td>
-                  <td>lala@gmail.com</td>
-                  <td>085852527578</td>
-                  <td>
-                    Jln. Jend Sudirman no.4, Kudus
-                  </td>
-                  <td>
-                    Aktif
-                  </td>
-                  <td>
-                    <a href="{{ route('customer.edit', 4) }}" class="btn btn-sm btn-primary">Edit</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Didi</td>
-                  <td>didi@gmail.com</td>
-                  <td>085852527579</td>
-                  <td>
-                    Jln. Jend Sudirman no.5, Kudus
-                  </td>
-                  <td>
-                    Aktif
-                  </td>
-                  <td>
-                    <a href="{{ route('customer.edit', 5) }}" class="btn btn-sm btn-primary">Edit</a>
                   </td>
                 </tr>
               </tbody>
