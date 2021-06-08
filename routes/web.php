@@ -32,6 +32,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
    Route::resource('customer', 'CustomerController');
    // route transaksi
    Route::resource('transaksi', 'TransaksiController');
+   
+   Route::put('updateprofil/{id}', 'UserController@update')->name('updateprofil');
+   // route user
+   
    // profil
    Route::get('profil', 'UserController@index');
    // setting profil
@@ -60,7 +64,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     // wishlist
     Route::resource('wishlist', 'WishlistController');
 // shopping cart
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
+    Route::get('/', 'HomepageController@index');
     // cart
     Route::resource('cart', 'CartController');
     Route::patch('kosongkan/{id}', 'CartController@kosongkan');

@@ -46,7 +46,6 @@
                   <th>Gambar</th>
                   <th>Kode</th>
                   <th>Nama</th>
-                  <th>Jumlah Produk</th>
                   <th>Status</th>
                   <th></th>
                 </tr>
@@ -60,7 +59,7 @@
                   <td>
                     <!-- image kategori -->
                     @if($kategori->foto != null)
-                    <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" width='150px' class="img-thumbnail mb-2">
+                    <img src="{{ asset('storage/'.$kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" width='150px' class="img-thumbnail mb-2">
                     <br>
                     <form action="{{ url('/admin/imagekategori/'.$kategori->id) }}" method="post" style="display:inline;">
                       @csrf
