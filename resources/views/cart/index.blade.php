@@ -36,6 +36,7 @@
               </tr>
             </thead>
             <tbody>
+            @if($itemcart != null)
               @foreach($itemcart->detail as $detail)
               <tr>
                 <td>
@@ -146,5 +147,6 @@
       </div>
     </div>
   </div>
+  @endif
 </div>
 @endsection

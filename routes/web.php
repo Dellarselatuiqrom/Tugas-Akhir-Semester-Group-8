@@ -62,12 +62,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   // load async produk
   Route::get('loadprodukasync/{id}', 'ProdukController@loadasync');
     // wishlist
-    Route::resource('wishlist', 'WishlistController');
+  Route::resource('wishlist', 'WishlistController');
 // shopping cart
+    });
+
 Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
     Route::get('/', 'HomepageController@index');
     // cart
-    Route::resource('cart', 'CartController');
+    Route::resource('cart', 'CartController')->middleware('auth');
+    //Route::get('cart/{id}', 'CartController@index')->name('cart');
     Route::patch('kosongkan/{id}', 'CartController@kosongkan');
     // cart detail
     Route::resource('cartdetail', 'CartDetailController');
@@ -78,7 +81,6 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
     //exportpdf
     Route::get('cetakpdf', 'AlamatPengirimanController@cetakpdf');
 
-  });
   });
 
 Auth::routes();

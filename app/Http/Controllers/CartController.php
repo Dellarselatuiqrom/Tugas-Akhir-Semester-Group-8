@@ -20,13 +20,9 @@ class CartController extends Controller
         $itemcart = Cart::where('user_id', $itemuser->id)
                         ->where('status_cart', 'cart')
                         ->first();
-        if ($itemcart) {
             $data = array('title' => 'Shopping Cart',
                         'itemcart' => $itemcart);
             return view('cart.index', $data)->with('no', 1);
-        } else {
-            return abort('404');
-        }
     }
 
     /**

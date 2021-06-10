@@ -15,7 +15,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-
         $inputan['name'] = 'iqrom';
         $inputan['email'] = 'iq@gmail.com';//ganti pake emailmu
         $inputan['password'] = Hash::make('12345678');//passwordnya 123258

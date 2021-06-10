@@ -12,6 +12,7 @@ use Auth;
 class HomepageController extends Controller
 {
     public function index() {
+        $user = Auth::user();
         $itemproduk = Produk::orderBy('created_at', 'desc')->limit(6)->get();
         $itempromo = ProdukPromo::orderBy('created_at', 'desc')->limit(6)->get();
         $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->limit(6)->get();
@@ -19,6 +20,7 @@ class HomepageController extends Controller
             'itemproduk' => $itemproduk,
             'itempromo' => $itempromo,
             'itemkategori' => $itemkategori,
+            'user' => $user,
         );
         return view('homepage.index', $data);
     }

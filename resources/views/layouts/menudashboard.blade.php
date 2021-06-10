@@ -3,7 +3,7 @@
     <!-- Add icons to the links using the .nav-icon class
           with font-awesome or any other icon font library -->
     <li class="nav-item">
-      <a href="/" class="nav-link">
+      <a href="/admin" class="nav-link">
         <i class="nav-icon fas fa-th"></i>
         <p>
           Dashboard
@@ -62,14 +62,6 @@
         </li>
       </ul>
     </li>
-    <li class="nav-item has-treeview">
-      <a href="{{ route('alamatpengiriman.index') }}" class="nav-link">
-        <i class="nav-icon fas fa-folder"></i>
-        <p>
-          Data Alamat Pengiriman
-        </p>
-      </a>
-     </li>
     <li class="nav-item">
       <a href="{{ URL::to('admin/profil') }}" class="nav-link">
         <i class="nav-icon fas fa-users"></i>
