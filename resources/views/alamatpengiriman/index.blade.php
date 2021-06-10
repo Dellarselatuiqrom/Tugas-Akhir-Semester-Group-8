@@ -130,8 +130,8 @@
     </div>
   </div>
   <br>
-  
-  <a href="{{ URL::to('/admin/cetakpdf') }}"class="btn btn-sm btn-primary">Export PDF</a>
+
+  <a href="{{ URL::to('/user/cetakpdf') }}"class="btn btn-sm btn-primary">Export PDF</a>
 </div>
 
 @endsection

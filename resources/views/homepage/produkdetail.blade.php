@@ -87,11 +87,13 @@
               <button class="btn btn-block btn-primary" type="submit">
               <i class="fa fa-shopping-cart"></i> Tambahkan Ke Keranjang
               </button>
-            </form>
-              <button class="btn btn-block btn-danger mt-4">
+            <form action="{{ route('cartdetail.store') }}" method="POST">
+            <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
+              <button class="btn btn-block btn-danger mt-4" type="submit">
               <i class="fa fa-shopping-basket"></i> Beli Sekarang
               </button>
             </div>
+            </form>
             <div class="card-footer">
               <div class="row mt-4">
                 <div class="col text-center">

@@ -32,10 +32,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
    Route::resource('customer', 'CustomerController');
    // route transaksi
    Route::resource('transaksi', 'TransaksiController');
-   
+
    Route::put('updateprofil/{id}', 'UserController@update')->name('updateprofil');
    // route user
-   
+
    // profil
    Route::get('profil', 'UserController@index');
    // setting profil
@@ -61,8 +61,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   Route::resource('promo', 'ProdukPromoController');
   // load async produk
   Route::get('loadprodukasync/{id}', 'ProdukController@loadasync');
-    // wishlist
-  Route::resource('wishlist', 'WishlistController');
 // shopping cart
     });
 
@@ -76,6 +74,8 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
     Route::resource('cartdetail', 'CartDetailController');
     // alamat pengiriman
     Route::resource('alamatpengiriman', 'AlamatPengirimanController');
+      // wishlist
+  Route::resource('wishlist', 'WishlistController');
     // checkout
     Route::get('checkout', 'CartController@checkout');
     //exportpdf

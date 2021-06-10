@@ -131,7 +131,7 @@
         <div class="card-footer">
           <div class="row">
             <div class="col">
-            <a href="{{ URL::to('/admin/checkout') }}" class="btn btn-primary btn-block">
+            <a href="{{ URL::to('/user/checkout') }}" class="btn btn-primary btn-block">
              Checkout
             </a>
             </div>
