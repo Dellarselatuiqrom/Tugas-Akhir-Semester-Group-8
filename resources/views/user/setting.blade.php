@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
               <label for="foto">Photo</label>
-              <input type="file" name="foto" value="{{ $user->foto }}" id="foto">
+              <input type="file" name="foto" value="{{ $user->foto   }}" id="foto">
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-primary">Update</button>

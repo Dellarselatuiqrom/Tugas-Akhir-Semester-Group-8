@@ -75,7 +75,7 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
     // alamat pengiriman
     Route::resource('alamatpengiriman', 'AlamatPengirimanController');
       // wishlist
-  Route::resource('wishlist', 'WishlistController');
+    Route::resource('wishlist', 'WishlistController');
     // checkout
     Route::get('checkout', 'CartController@checkout')->name('checkout');
     //exportpdf
