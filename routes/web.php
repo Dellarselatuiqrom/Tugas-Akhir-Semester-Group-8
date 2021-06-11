@@ -79,7 +79,7 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
     // checkout
     Route::get('checkout', 'CartController@checkout')->name('checkout');
     //exportpdf
-    Route::get('cetakpdf', 'AlamatPengirimanController@cetakpdf');
+    Route::post('cetakpdf', 'AlamatPengirimanController@cetakpdf');
     //transaksi
     Route::resource('transaksi', 'TransaksiController');
 
