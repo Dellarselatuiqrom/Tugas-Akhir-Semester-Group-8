@@ -88,9 +88,8 @@
               <i class="fa fa-shopping-cart"></i> Tambahkan Ke Keranjang
               </button>
               </form>
-            <form action="{{ route('cart.checkout') }}" method="POST" enctype='multipart/form-data'>
+            <form action="{{ route('checkout') }}" method="POST">
             @csrf
-            {{ method_field('PUT') }})
             <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
               <button class="btn btn-block btn-danger mt-4" type="submit">
               <i class="fa fa-shopping-basket"></i> Beli Sekarang
