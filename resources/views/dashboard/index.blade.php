@@ -1,5 +1,4 @@
 @extends('layouts.dashboard')
-{{ $no = 0 }}
 @section('content')
 <div class="container-fluid">
   <div class="row">
@@ -7,7 +6,7 @@
       <div class="small-box bg-primary">
         <div class="inner">
           <h3>Order Baru</h3>
-
+          {{ $no = 0 }}
           <p></p>
         </div>
         <div class="icon">
@@ -93,7 +92,7 @@
                   {{ $produk->kategori->nama_kategori }}
                   </td>
               <td>
-                  {{ $produk->qty }} 
+                  {{ $produk->qty }}
                   </td>
               <td>
                   {{ number_format($produk->harga, 2) }}
