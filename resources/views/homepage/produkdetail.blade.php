@@ -87,11 +87,14 @@
               <button class="btn btn-block btn-primary" type="submit">
               <i class="fa fa-shopping-cart"></i> Tambahkan Ke Keranjang
               </button>
-            <form action="{{ route('cartdetail.store') }}" method="POST">
+              </form>
+            <form action="{{ route('checkout') }}" method="POST">
+            @csrf
             <input type="hidden" name="produk_id" value={{$itemproduk->id}}>
               <button class="btn btn-block btn-danger mt-4" type="submit">
               <i class="fa fa-shopping-basket"></i> Beli Sekarang
               </button>
+            </form>
             </div>
             </form>
             <div class="card-footer">

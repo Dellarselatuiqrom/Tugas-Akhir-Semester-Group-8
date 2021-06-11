@@ -25,6 +25,10 @@ class TransaksiController extends Controller
                         })
                         ->orderBy('created_at', 'desc')
                         ->paginate(20);
+            $data = array('title' => 'Data Transaksi',
+                        'itemorder' => $itemorder,
+                        'itemuser' => $itemuser);
+            return view('transaksi.adminindex', $data)->with('no', ($request->input('page', 1) - 1) * 20);
         } else {
             // kalo member maka menampilkan cart punyanya sendiri
             $itemorder = Order::whereHas('cart', function($q) use ($itemuser) {
@@ -33,11 +37,12 @@ class TransaksiController extends Controller
                         })
                         ->orderBy('created_at', 'desc')
                         ->paginate(20);
+
+            $data = array('title' => 'Data Transaksi',
+                        'itemorder' => $itemorder,
+                        'itemuser' => $itemuser);
+            return view('transaksi.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
         }
-        $data = array('title' => 'Data Transaksi',
-                    'itemorder' => $itemorder,
-                    'itemuser' => $itemuser);
-        return view('transaksi.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
     }
 
     /**
@@ -103,7 +108,7 @@ class TransaksiController extends Controller
             $itemorder = Order::findOrFail($id);
             $data = array('title' => 'Detail Transaksi',
                         'itemorder' => $itemorder);
-            return view('transaksi.show', $data)->with('no', 1);
+            return view('transaksi.adminshow', $data)->with('no', 1);
         } else {
             $itemorder = Order::where('id', $id)
                             ->whereHas('cart', function($q) use ($itemuser) {

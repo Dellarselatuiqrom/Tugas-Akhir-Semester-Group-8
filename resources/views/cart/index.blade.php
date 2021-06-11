@@ -136,7 +136,7 @@
             </a>
             </div>
             <div class="col">
-              <form action="{{ url('cart.kosongkan').'/'.$itemcart->id }}" method="post">
+              <form action="{{ route('kosongkan', $itemcart->id) }}" method="post">
                 @method('patch')
                 @csrf()
                 <button type="submit" class="btn btn-danger btn-block">Kosongkan</button>
@@ -147,6 +147,6 @@
       </div>
     </div>
   </div>
-  @endif
 </div>
+@endif
 @endsection

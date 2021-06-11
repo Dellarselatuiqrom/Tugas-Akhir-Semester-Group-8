@@ -10,7 +10,7 @@
               Alamat Pengiriman
             </div>
             <div class="col-auto">
-              <a href="{{ URL::to('/admin/checkout') }}" class="btn btn-sm btn-danger">
+              <a href="{{ URL::to('/user/checkout') }}" class="btn btn-sm btn-danger">
                 Tutup
               </a>
             </div>

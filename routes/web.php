@@ -69,7 +69,7 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
     // cart
     Route::resource('cart', 'CartController')->middleware('auth');
     //Route::get('cart/{id}', 'CartController@index')->name('cart');
-    Route::patch('kosongkan/{id}', 'CartController@kosongkan');
+    Route::patch('kosongkan/{id}', 'CartController@kosongkan')->name('kosongkan');
     // cart detail
     Route::resource('cartdetail', 'CartDetailController');
     // alamat pengiriman
@@ -77,9 +77,11 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
       // wishlist
   Route::resource('wishlist', 'WishlistController');
     // checkout
-    Route::get('checkout', 'CartController@checkout');
+    Route::get('checkout', 'CartController@checkout')->name('checkout');
     //exportpdf
     Route::get('cetakpdf', 'AlamatPengirimanController@cetakpdf');
+    //transaksi
+    Route::resource('transaksi', 'TransaksiController');
 
   });
 

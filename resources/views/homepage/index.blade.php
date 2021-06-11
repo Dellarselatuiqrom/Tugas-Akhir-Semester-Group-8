@@ -39,7 +39,7 @@
       <div class="card mb-4 shadow-sm">
         <a href="{{ URL::to('produk/satu') }}">
           @if($produk->foto != null)
-          <img src="{{ \Storage::url($produk->foto) }}" alt="{{ $produk->nama_produk }}" class="card-img-top">
+          <img src="{{ asset('storage/'.$produk->foto) }}" alt="{{ $produk->nama_produk }}" class="card-img-top">
           @else
           <img src="{{ asset('images/bag.jpg') }}" alt="{{ $produk->nama_produk }}" class="card-img-top">
           @endif

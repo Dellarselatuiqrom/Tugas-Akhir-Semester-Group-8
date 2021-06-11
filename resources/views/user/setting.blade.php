@@ -13,7 +13,7 @@
           @endif
           </div>
           <hr>
-          <form action="{{ route('updateprofil', $user->id) }}" method="POST">
+          <form action="{{ route('updateprofil', $user->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
           @method('PUT')
             <div class="form-group">
