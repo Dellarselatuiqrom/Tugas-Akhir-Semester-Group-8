@@ -25,7 +25,7 @@ class CreateOrdersTable extends Migration
             $table->string('kecamatan');
             $table->string('kelurahan');
             $table->string('kodepos');
-            $table->foreign('cart_id')->references('id')->on('cart');
+            $table->foreign('cart_id')->references('id')->on('cart')->onDelete('cascade');
             $table->timestamps();
         });
     }

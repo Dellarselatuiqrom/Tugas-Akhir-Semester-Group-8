@@ -6,7 +6,11 @@
       <div class="card card-primary card-outline">
         <div class="card-body box-profile">
           <div class="text-center">
-            <img src="{{ asset('img/profil.png') }}" alt="profil" class="profile-user-img img-responsive img-circle">
+          @if($user->foto != null)
+          <img src="{{ asset('storage/'.$user->foto) }}" alt="profil" class="profile-user-img img-responsive img-circle">
+          @else
+          <img src="{{ asset('img/profil.png') }}" alt="profil" class="profile-user-img img-responsive img-circle">
+          @endif
           </div>
           <hr>
           <strong>
@@ -30,7 +34,13 @@
             <input type="text" name="phone" id="phone" value="{{ $user->phone }}" class="form-control">
           </strong>
           <p class="text-muted">
-
+          </p>
+          <hr>
+          <strong>
+            Alamat :
+            <input type="text" name="alamat" id="alamat" value="{{ $user->alamat }}"class="form-control">
+          </strong>
+          <p class="text-muted">
           </p>
           <hr>
           <a href="{{ URL::to('admin/setting') }}" class="btn btn-primary btn-block">Setting</a>

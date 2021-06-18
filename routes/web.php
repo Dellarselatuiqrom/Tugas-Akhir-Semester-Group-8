@@ -33,13 +33,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
    // route transaksi
    Route::resource('transaksi', 'TransaksiController');
 
+   //
    Route::put('updateprofil/{id}', 'UserController@update')->name('updateprofil');
    // route user
 
    // profil
    Route::get('profil', 'UserController@index');
    // setting profil
-   Route::get('setting', 'UserController@setting');
+   Route::get('setting', 'UserController@setting')->name('setting');;
    // form laporan
    Route::get('laporan', 'LaporanController@index');
    // proses laporan
@@ -58,9 +59,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
    Route::post('produkimage', 'ProdukController@uploadimage');
    // hapus image produk
    Route::delete('produkimage/{id}', 'ProdukController@deleteimage');
-  Route::resource('promo', 'ProdukPromoController');
+   Route::resource('promo', 'ProdukPromoController');
   // load async produk
-  Route::get('loadprodukasync/{id}', 'ProdukController@loadasync');
+   Route::get('loadprodukasync/{id}', 'ProdukController@loadasync');
 // shopping cart
     });
 
@@ -79,11 +80,12 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
     // checkout
     Route::get('checkout', 'CartController@checkout')->name('checkout');
     //exportpdf
-    Route::post('cetakpdf', 'AlamatPengirimanController@cetakpdf');
+    Route::get('cetakpdf', 'AlamatPengirimanController@cetakpdf');
     //transaksi
     Route::resource('transaksi', 'TransaksiController');
 
   });
+
 
 Auth::routes();
 

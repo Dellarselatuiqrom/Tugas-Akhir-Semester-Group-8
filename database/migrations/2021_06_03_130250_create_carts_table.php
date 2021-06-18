@@ -26,7 +26,7 @@ class CreateCartsTable extends Migration
             $table->double('ongkir', 12, 2)->default(0);
             $table->double('diskon', 12, 2)->default(0);
             $table->double('total', 12, 2)->default(0);
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

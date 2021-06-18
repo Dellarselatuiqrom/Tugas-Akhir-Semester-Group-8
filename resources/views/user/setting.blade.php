@@ -1,6 +1,16 @@
 @extends('layouts.dashboard')
 @section('content')
 <div class="container-fluid">
+@if ($errors->any())
+ <div class="alert alert-danger">
+ <strong>Whoops!</strong> There were some problems with your input.<br><br>
+ <ul>
+ @foreach ($errors->all() as $error)
+ <li>{{ $error }}</li>
+ @endforeach
+ </ul>
+ </div>
+ @endif
   <div class="row">
     <div class="col col-lg-4 col-md-4">
       <div class="card card-primary card-outline">
@@ -25,8 +35,16 @@
               <input type="text" name="phone" id="phone" value="{{ $user->phone }}" class="form-control">
             </div>
             <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="email" value="{{ $user->email }}"class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="alamat">Alamat</label>
+              <input type="text" name="alamat" id="alamat" value="{{ $user->alamat }}"class="form-control">
+            </div>
+            <div class="form-group">
               <label for="foto">Photo</label>
-              <input type="file" name="foto" value="{{ $user->foto   }}" id="foto">
+              <input type="file" name="foto" value="{{ $user->foto }}" id="foto">
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-primary">Update</button>

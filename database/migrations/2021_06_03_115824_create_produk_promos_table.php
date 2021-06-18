@@ -21,8 +21,8 @@ class CreateProdukPromosTable extends Migration
             $table->integer('diskon_persen')->default(0);
             $table->decimal('diskon_nominal', 16,2)->default(0);
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('produk_id')->references('id')->on('produk');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('produk_id')->references('id')->on('produk')->onDelete('cascade');
             $table->timestamps();
         });
     }

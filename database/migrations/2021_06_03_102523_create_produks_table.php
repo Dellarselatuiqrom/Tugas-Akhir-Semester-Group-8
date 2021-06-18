@@ -27,7 +27,7 @@ class CreateProduksTable extends Migration
             $table->double('harga', 12, 2)->default(0);
             $table->string('status');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('kategori_id')->references('id')->on('kategori');
+            $table->foreign('kategori_id')->references('id')->on('kategori')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use App\Models\Produk;
 
 class KategoriController extends Controller
 {
@@ -122,8 +123,9 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         $itemkategori = Kategori::findOrFail($id);//cari berdasarkan id = $id,
+        $itemproduk = Produk::where('kategori_id', $itemkategori->id);
         // kalo ga ada error page not found 404
-        if (count($itemkategori->produk) > 0) {
+        if (($itemproduk->count()) > 0) {
             // dicek dulu, kalo ada produk di dalam kategori maka proses hapus dihentikan
             return back()->with('error', 'Hapus dulu produk di dalam kategori ini, proses dihentikan');
         } else {

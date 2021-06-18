@@ -14,20 +14,6 @@
           </div>
         </div>
         <div class="card-body">
-          <form action="#">
-            <div class="row">
-              <div class="col">
-                <input type="text" name="keyword" id="keyword" class="form-control" placeholder="ketik keyword disini">
-              </div>
-              <div class="col-auto">
-                <button class="btn btn-primary">
-                  Cari
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="card-body">
           @if ($message = Session::get('error'))
               <div class="alert alert-warning">
                   <p>{{ $message }}</p>

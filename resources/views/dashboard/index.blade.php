@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
 @section('content')
+{{ $no = 0 }}
 <div class="container-fluid">
   <div class="row">
     <div class="col-6 col-lg-3">
       <div class="small-box bg-primary">
         <div class="inner">
           <h3>Order Baru</h3>
-          {{ $no = 0 }}
           <p></p>
         </div>
         <div class="icon">

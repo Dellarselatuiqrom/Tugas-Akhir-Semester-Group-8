@@ -22,7 +22,7 @@ class CreateKategorisTable extends Migration
             $table->string('status');
             $table->string('foto')->nullable();//foto atau banner kategori
             $table->integer('user_id')->unsigned();//user yang menginput kategori
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

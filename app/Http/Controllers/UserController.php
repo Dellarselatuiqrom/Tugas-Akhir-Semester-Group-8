@@ -73,30 +73,24 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
             'phone' => 'required',
             'alamat'=>'required',
-            'role'=>'required',
             'foto'=>'required',
-            'status'=>'required'
         ]);
 
         $user = Auth::user();
         $user->name = $request->get('name');
         $user->email = $request->get('email');
-        $user->password = $request->get('password');
         $user->phone = $request->get('phone');
         $user->alamat = $request->get('alamat');
-        $user->role = $request->get('role');
         if($user->foto && file_exists(storage_path('storage/'.$user->foto))){
             Storage::delete('storage/'.$user->foto);
         }
         $image_name = $request->file('foto')->store('files', 'public');
         $user->foto = $image_name;
-        $user->status = $request->get('status');
         $user->save();
 
-        return redirect()->route('admin/index')
+        return redirect()->route('setting')
             ->with('success', 'User Successfully Updated');
     }
 

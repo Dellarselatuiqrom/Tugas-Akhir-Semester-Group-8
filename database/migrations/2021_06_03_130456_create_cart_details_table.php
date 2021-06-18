@@ -21,8 +21,8 @@ class CreateCartDetailsTable extends Migration
             $table->double('harga', 12, 2)->default(0);
             $table->double('diskon', 12, 2)->default(0);
             $table->double('subtotal', 12, 2)->default(0);
-            $table->foreign('cart_id')->references('id')->on('cart');
-            $table->foreign('produk_id')->references('id')->on('produk');
+            $table->foreign('cart_id')->references('id')->on('cart')->onDelete('cascade');
+            $table->foreign('produk_id')->references('id')->on('produk')->onDelete('cascade');
             $table->timestamps();
         });
     }

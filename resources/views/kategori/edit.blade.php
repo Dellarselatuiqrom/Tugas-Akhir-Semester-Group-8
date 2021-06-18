@@ -13,22 +13,23 @@
           </div>
         </div>
         <div class="card-body">
-          <form action="#">
+          <form action="{{ route('kategori.update', $itemkategori->id) }}" method="post">
+          {{ method_field('patch') }}
+            @csrf
           <div class="form-group">
               <label for="nama_kategori">Nama Kategori</label>
-              <input type="text" name="nama_kategori" id="nama_kategori" class="form-control">
+              <input type="text" name="nama_kategori" id="nama_kategori" class="form-control" value="{{ $itemkategori->nama_kategori }}">
             </div>
             <div class="form-group">
               <label for="slug_kategori">Slug Kategori</label>
-              <input type="text" name="slug_kategori" id="slug_kategori" class="form-control">
+              <input type="text" name="slug_kategori" id="slug_kategori" class="form-control" value="{{ $itemkategori->slug_kategori }}">
             </div>
             <div class="form-group">
               <label for="deskripsi">Deskripsi</label>
-              <textarea name="deskripsi" id="deskripsi" cols="30" rows="5" class="form-control"></textarea>
+              <input type="textarea" name="deskripsi" id="deskripsi" cols="30" rows="5" class="form-control" value="{{ $itemkategori->deskripsi_kategori }}"></input>
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-primary">Update</button>
-              <button type="reset" class="btn btn-warning">Reset</button>
             </div>
           </form>
         </div>
